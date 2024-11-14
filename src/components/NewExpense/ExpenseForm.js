@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { v4 as Guid } from "uuid";
 
 import "./ExpenseForm.css";
 
@@ -64,6 +65,7 @@ const ExpenseForm = (props) => {
     const formSubmitHandler = (event) => {
         event.preventDefault();
         const newExpenseData = {
+            id: Guid(),
             title: userInput.enteredTitle,
             amount: userInput.enteredAmount,
             date: new Date(userInput.enteredDate)
